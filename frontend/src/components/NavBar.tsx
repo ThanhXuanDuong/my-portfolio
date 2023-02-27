@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {AppBar, Box, Button, Divider, ThemeProvider, Toolbar, Typography} from "@mui/material";
+import {AppBar, Box, Button, ThemeProvider, Toolbar, Typography} from "@mui/material";
 import theme from "../theme/theme";
 
 export default function NavBar() {

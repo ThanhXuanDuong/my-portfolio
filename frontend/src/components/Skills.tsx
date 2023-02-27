@@ -1,6 +1,5 @@
-import {Box, Card, CardMedia, Container, IconButton, ThemeProvider, Typography} from "@mui/material";
+import {Box, Card, CardMedia, Container, ThemeProvider, Typography} from "@mui/material";
 import theme from "../theme/theme";
-import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 
 export default function Skills(){
     return (
