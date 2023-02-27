@@ -6,12 +6,12 @@ const theme = createTheme({
             default: '#DDDCDB'
         },
         primary: {
-            main: '#DDDCDB',
-            contrastText:'#000000'
+            main: '#613FE3',
+            contrastText:'#ffffff'
         },
         secondary: {
-            main: '#613FE3',
-            contrastText:'white'
+            main: '#212124',
+            contrastText:'#ffffff'
         },
 
     },

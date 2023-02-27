@@ -1,25 +1,24 @@
 import * as React from 'react';
-import {AppBar, Box, Button, Divider, Toolbar, Typography} from "@mui/material";
+import {AppBar, Box, Button, Divider, ThemeProvider, Toolbar, Typography} from "@mui/material";
+import theme from "../theme/theme";
 
 export default function NavBar() {
     return (
+        <ThemeProvider theme={theme}>
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
-                <Toolbar>
+                <Toolbar sx={{backgroundColor:"secondary.main", color:"secondary.contrastText"}}>
                     <Typography variant="body2" component="div" sx={{ flexGrow: 1 }}>
                         WELCOME
                     </Typography>
                     <Button color="inherit">Home</Button>
-                    <Divider orientation="vertical" variant="middle" flexItem />
                     <Button color="inherit">About</Button>
-                    <Divider orientation="vertical" variant="middle" flexItem />
                     <Button color="inherit">Skills</Button>
-                    <Divider orientation="vertical" variant="middle" flexItem />
                     <Button color="inherit">Projects</Button>
-                    <Divider orientation="vertical" variant="middle" flexItem />
                     <Button color="inherit">Contact</Button>
                 </Toolbar>
             </AppBar>
         </Box>
+        </ThemeProvider>
     );
 }
