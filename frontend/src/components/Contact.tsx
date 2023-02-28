@@ -1,4 +1,5 @@
 import {
+    Box,
     Container,
     Grid,
     ThemeProvider,
@@ -10,25 +11,31 @@ import MyContact from "./MyContact";
 
 export default function Contact(){
     return (
-        <ThemeProvider theme={theme}>
-            <Container>
-                <Typography variant="h1"
-                            marginTop="2rem"
-                            marginBottom="4rem">
-                    Contact
-                </Typography>
+        <div id="Contact">
+            <ThemeProvider theme={theme}>
+                <Box sx={{ width: "100%",
+                    height:"100vh"
+                }}>
+                    <Container>
+                        <Typography variant="h1"
+                                    paddingTop="100px"
+                                    marginBottom="4rem">
+                            Contact
+                        </Typography>
 
-                <Grid container
-                      spacing={2}
-                      justifyContent = "center">
-                    <Grid item xl={5} md={6}>
-                        <MyContact/>
-                    </Grid>
-                    <Grid item xl={7} md={6}>
-                        <ContactForm/>
-                    </Grid>
-                </Grid>
-            </Container>
-        </ThemeProvider>
+                        <Grid container
+                              spacing={2}
+                              justifyContent = "center">
+                            <Grid item xl={5} md={6}>
+                                <MyContact/>
+                            </Grid>
+                            <Grid item xl={7} md={6}>
+                                <ContactForm/>
+                            </Grid>
+                        </Grid>
+                    </Container>
+                </Box>
+            </ThemeProvider>
+        </div>
     )
 }

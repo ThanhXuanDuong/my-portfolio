@@ -5,60 +5,70 @@ import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrow
 
 export default function About(){
     return (
-        <ThemeProvider theme={theme}>
-            <Box sx={{ width: "100%",
-                height:"100vh",
-                bgcolor:"#212124",
-                color:"#ffffff"
-            }}>
-                <Container>
-                    <Typography variant="h1"  paddingTop="2rem" marginBottom="4rem">
-                        About
-                    </Typography>
-                    <Grid container spacing={2}>
-                        <Grid item xl={7} md={6}>
-                            <Card sx={{width: {xl: '100%', md: '90%' ,objectFit:"contain"}}}>
-                                <CardMedia
-                                    component="img"
-                                    image={profile1}
-                                    alt={"profile1"}
-                                />
-                            </Card>
-                        </Grid>
-                        <Grid item xl={5} md={6} alignSelf="center">
-                            <Box display="flex"
-                                 flexDirection="column"
-                                 marginTop="2rem"
-                                 padding="2rem"
-                                 justifyContent="center"
-                                 alignItems="center"
-                                 gap="1rem"
-                            >
-                                <Typography sx={{typography: { xl: 'h6', md: 'body1' }, textAlign:"justify"}}>
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                    sed diam nonumy eirmod tempor invidunt ut.
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                    sed diam nonumy eirmod tempor invidunt ut
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                    sed diam nonumy eirmod tempor invidunt ut
-                                </Typography>
+        <div id="About">
+            <ThemeProvider theme={theme}>
+                <Box sx={{ width: "100%",
+                    height:"100vh",
+                    bgcolor:"#212124",
+                    color:"#ffffff"
+                }}>
+                    <Container>
+                        <Typography variant="h1"
+                                    paddingTop="100px"
+                                    marginBottom="4rem">
+                            About
+                        </Typography>
+                        <Grid container spacing={2}>
+                            <Grid item xl={7} md={6}>
+                                <Card sx={{width: {xl: '100%', md: '90%' ,objectFit:"contain"}}}>
+                                    <CardMedia
+                                        component="img"
+                                        image={profile1}
+                                        alt={"profile1"}
+                                    />
+                                </Card>
+                            </Grid>
+                            <Grid item xl={5} md={6} alignSelf="center">
+                                <Box display="flex"
+                                     flexDirection="column"
+                                     marginTop="2rem"
+                                     padding="2rem"
+                                     justifyContent="center"
+                                     alignItems="center"
+                                     gap="1rem"
+                                >
+                                    <Typography sx={{typography: { xl: 'h6', md: 'body1' },
+                                        textAlign:"justify"}}>
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                        sed diam nonumy eirmod tempor invidunt ut.
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                        sed diam nonumy eirmod tempor invidunt ut
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                        sed diam nonumy eirmod tempor invidunt ut
+                                    </Typography>
 
-                                <Box display="flex" gap="0.5rem" justifyContent="center">
-                                    <Button variant="contained" sx={{width:"10rem"}}>Download CV</Button>
+                                    <Box display="flex" gap="0.5rem" justifyContent="center">
+                                        <Button variant="contained"
+                                                sx={{width:"10rem"}}
+                                        >Download CV</Button>
 
-                                    <Button variant="contained" sx={{width:"10rem"}}>Projects</Button>
+                                        <Button href="#Projects"
+                                                variant="contained"
+                                                sx={{width:"10rem"}}
+                                        >Projects</Button>
+                                    </Box>
+
                                 </Box>
-
-                            </Box>
+                            </Grid>
                         </Grid>
-                    </Grid>
-                    <Box textAlign="end">
-                        <IconButton>
-                            <KeyboardDoubleArrowDownIcon sx={{fontSize:"60px", color:"#ffffff"}}/>
-                        </IconButton>
-                    </Box>
-                </Container>
-            </Box>
-        </ThemeProvider>
+                        <Box textAlign="end">
+                            <IconButton href="#Skills">
+                                <KeyboardDoubleArrowDownIcon sx={{fontSize:"60px", color:"#ffffff"}}/>
+                            </IconButton>
+                        </Box>
+                    </Container>
+                </Box>
+            </ThemeProvider>
+        </div>
     )
 }

@@ -1,6 +1,22 @@
 import {Box, Button, TextField} from "@mui/material";
 
 export default function ContactForm(){
+    /*
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+    };
+
+     */
+
     return (
         <Box
             component="form"
@@ -9,6 +25,7 @@ export default function ContactForm(){
             justifyContent="center"
             alignItems="center"
             autoComplete="off"
+            marginBottom="5rem"
         >
             <TextField required
                        sx={{width: 500, mb: 2}}
@@ -42,7 +59,9 @@ export default function ContactForm(){
                        name="message"
                        variant="outlined"
                        size="medium"/>
-            <Button variant="contained" sx={{width:"10rem"}}>Send</Button>
+            <Button variant="contained"
+                    sx={{width:"10rem"}}
+            >Send</Button>
         </Box>
     )
 }
