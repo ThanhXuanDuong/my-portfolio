@@ -6,8 +6,8 @@ import {
     Typography
 } from "@mui/material";
 import theme from "../theme/theme";
-import ContactForm from "./ContactForm";
-import MyContact from "./MyContact";
+import ContactForm from "../components/ContactForm";
+import MyContact from "../components/MyContact";
 
 export default function Contact(){
     return (
