@@ -10,14 +10,11 @@ export default function ContactForm(){
         e.preventDefault();
 
         form.current &&
-        process.env.REACT_APP_SERVICE_ID &&
-        process.env.REACT_APP_TEMPLATE_ID &&
-        process.env.REACT_APP_PUBLIC_KEY &&
         emailjs.sendForm(
-            process.env.REACT_APP_SERVICE_ID,
-            process.env.REACT_APP_TEMPLATE_ID,
+            'service_hbvuvbt',
+            'template_jud8c6e',
             form.current,
-            process.env.REACT_APP_PUBLIC_KEY)
+            'tGRMulOYU46TAmxsZ')
             .then((result) => {
                 console.log(result.text);
             }, (error) => {
