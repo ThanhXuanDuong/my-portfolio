@@ -4,10 +4,12 @@ import {useEffect, useState} from "react";
 import Project from "../types/Project";
 import axios from "axios";
 import {CardMedia, Container, Typography} from "@mui/material";
+import Comment from "../types/Comment";
+import CommentField from "../components/CommentField";
 
 export function DetailPage(){
 
-    const initial = {
+    const initialProject = {
         "name":"",
         "imageId":"",
         "shortDescription":"",
@@ -18,19 +20,38 @@ export function DetailPage(){
         "liveDemoLink":""
 
     }
-
     const {id} = useParams<{id:string}>();
-    const [project, setProject] = useState<Project>(initial);
+
+    const initialComment ={
+            "writeBy":"",
+            "text": "",
+            "projectId":id
+    };
+
+    const [project, setProject] = useState<Project>(initialProject);
+    const [comment, setComment] =useState<Comment>(initialComment);
+    const [comments, setComments] =useState<Comment[]>([]);
 
     useEffect(() =>{
         (async ()=>{
-            const response = await axios.get(`/api/projects/${id}`)
+            const response = await axios.get(`/api/projects/${id}`);
             setProject(response.data);
+
+            const res = await axios.get(`/api/comments/project/${id}`);
+            setComments(res.data.reverse());
         })();
     },[id])
 
+    const onAdd= (comment:Comment)=>{
+        (async ()=>{
+            const response = await axios.post(`/api/comments`,comment)
+            setComments([response.data,...comments]);
+            setComment(initialComment);
+        })();
+    }
+
     return(
-        <Container>
+        <Container sx={{marginBottom:"5rem"}}>
             <Typography variant="h2"
                         paddingTop="100px"
                         marginBottom="1rem"
@@ -45,27 +66,39 @@ export function DetailPage(){
             >
                 {project.shortDescription}
             </Typography>
-            <Container sx={{textAlign:"center"}}>
+            <Container sx={{textAlign:"center", marginBottom:"2rem"}}>
                 {project.videoLink
-                    ? <iframe width="80%" height="500" src={project.videoLink}></iframe>
+                    ? <iframe width="80%" height="500" src={project.videoLink} title={project.name}></iframe>
                     : <CardMedia
                         component="img"
                         image={`/api/files/${project.imageId}`}
                         alt={project.name}/>
                 }
             </Container>
+            <Container sx={{marginBottom:"1rem"}}>
+                <Typography variant="h6" sx={{ fontWeight: 'bold'}}>
+                    Details
+                </Typography>
+                <Typography variant="body1">
+                    {project.detail}
+                </Typography>
+            </Container>
 
-            <Typography variant="body1">
-                Details: {project.detail}
-            </Typography>
+            <Container sx={{marginBottom:"2rem"}}>
+                <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                    Technologies
+                </Typography>
+                <Typography variant="body1">
+                    {project.techStack}
+                </Typography>
+            </Container>
 
-            <Typography variant="body1">
-                Technologies: {project.detail}
-            </Typography>
-
-            <Typography variant="body1">
-                Leave your comments below. I appreciate every feedback!
-            </Typography>
+            {comment.projectId &&
+                <CommentField comment={comment}
+                            comments={comments}
+                            setComment={setComment}
+                            onAdd={onAdd}/>
+            }
         </Container>
     )
 }

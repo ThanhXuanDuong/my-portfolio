@@ -48,9 +48,10 @@ export default function About(){
                                     </Typography>
 
                                     <Box display="flex" gap="0.5rem" justifyContent="center">
-                                        <Button variant="contained"
+                                        <Button href="#Skills"
+                                                variant="contained"
                                                 sx={{width:"10rem"}}
-                                        >Download CV</Button>
+                                        >Skills</Button>
 
                                         <Button href="#Projects"
                                                 variant="contained"
