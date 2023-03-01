@@ -2,6 +2,7 @@ import {Box, Button, Stack, TextField, Typography} from "@mui/material";
 import emailjs from '@emailjs/browser';
 import {FormEvent, useRef} from "react";
 export default function ContactForm(){
+    console.log(process.env.REACT_APP_SERVICE_ID );
 
     const form = useRef<HTMLFormElement>(null)
 
@@ -9,7 +10,14 @@ export default function ContactForm(){
         e.preventDefault();
 
         form.current &&
-        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+        process.env.REACT_APP_SERVICE_ID &&
+        process.env.REACT_APP_TEMPLATE_ID &&
+        process.env.REACT_APP_PUBLIC_KEY &&
+        emailjs.sendForm(
+            process.env.REACT_APP_SERVICE_ID,
+            process.env.REACT_APP_TEMPLATE_ID,
+            form.current,
+            process.env.REACT_APP_PUBLIC_KEY)
             .then((result) => {
                 console.log(result.text);
             }, (error) => {
