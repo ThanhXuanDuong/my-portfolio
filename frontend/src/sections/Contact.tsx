@@ -26,10 +26,10 @@ export default function Contact(){
                         <Grid container
                               spacing={2}
                               justifyContent = "center">
-                            <Grid item xl={5} md={6}>
+                            <Grid item xl={5.5} md={6} >
                                 <MyContact/>
                             </Grid>
-                            <Grid item xl={7} md={6}>
+                            <Grid item xl={6.5} md={6} alignSelf="center">
                                 <ContactForm/>
                             </Grid>
                         </Grid>

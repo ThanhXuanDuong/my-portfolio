@@ -1,12 +1,14 @@
-import {Box, Button, TextField} from "@mui/material";
-
+import {Box, Button, Stack, TextField, Typography} from "@mui/material";
+import emailjs from '@emailjs/browser';
+import {FormEvent, useRef} from "react";
 export default function ContactForm(){
-    /*
-    const form = useRef();
 
-    const sendEmail = (e) => {
+    const form = useRef<HTMLFormElement>(null)
+
+    const sendEmail = (e:FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
+        form.current &&
         emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
             .then((result) => {
                 console.log(result.text);
@@ -15,53 +17,67 @@ export default function ContactForm(){
             });
     };
 
-     */
-
     return (
-        <Box
-            component="form"
-            display="flex"
+        <Box display="flex"
+             width="100%"
             flexDirection="column"
             justifyContent="center"
-            alignItems="center"
-            autoComplete="off"
+            alignItems="start"
             marginBottom="5rem"
         >
-            <TextField required
-                       sx={{width: 500, mb: 2}}
-                       id="fullname"
-                       label={"Fullname"}
-                       name="fullname"
-                       variant="outlined"
-                       size="medium"/>
-            <TextField required
-                       sx={{width: 500, mb: 2}}
-                       id="company"
-                       label={"Company"}
-                       name="company"
-                       variant="outlined"
-                       size="medium"/>
-            <TextField required
-                       sx={{width: 500, mb: 2}}
-                       id="email"
-                       label={"Email"}
-                       name="email"
-                       variant="outlined"
-                       size="medium"/>
+            <Typography variant="h6"
+                        sx={{fontWeight: 'bold',
+                            color:"primary.main",
+                            marginBottom:"1rem",
+                            textAlign:"start"
+                        }}>
+                Contact me
+            </Typography>
 
-            <TextField required
-                       multiline
-                       rows={10}
-                       type="text"
-                       sx={{width: 500, mb: 2}}
-                       id="message"
-                       label={"Message"}
-                       name="message"
-                       variant="outlined"
-                       size="medium"/>
-            <Button variant="contained"
-                    sx={{width:"10rem"}}
-            >Send</Button>
+            <form ref={form} onSubmit={sendEmail}>
+                <Stack>
+                    <TextField required
+                               sx={{width: 500, mb: 2}}
+                               id="fullname"
+                               label={"Fullname"}
+                               name="from_name"
+                               variant="outlined"
+                               size="medium"/>
+
+                    <TextField required
+                               sx={{width: 500, mb: 2}}
+                               id="company"
+                               label={"Company"}
+                               name="from_company"
+                               variant="outlined"
+                               size="medium"/>
+
+                    <TextField required
+                               sx={{width: 500, mb: 2}}
+                               type="email"
+                               id="email"
+                               label={"Email"}
+                               name="from_email"
+                               variant="outlined"
+                               size="medium"/>
+
+                    <TextField required
+                               multiline
+                               rows={10}
+                               type="text"
+                               sx={{width: 500, mb: 2}}
+                               id="message"
+                               label={"Message"}
+                               name="message"
+                               variant="outlined"
+                               size="medium"/>
+
+                    <Button type="submit"
+                            variant="contained"
+                            sx={{width:"10rem"}}
+                    >Send</Button>
+                </Stack>
+            </form>
         </Box>
     )
 }
