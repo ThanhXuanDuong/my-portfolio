@@ -39,12 +39,14 @@ export default function About(){
                                 >
                                     <Typography sx={{typography: { xl: 'h6', md: 'body1' },
                                         textAlign:"justify"}}>
-                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                        sed diam nonumy eirmod tempor invidunt ut.
-                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                        sed diam nonumy eirmod tempor invidunt ut
-                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                                        sed diam nonumy eirmod tempor invidunt ut
+                                        As a recent graduate in medical engineering,
+                                        I developed a keen interest in programming and
+                                        subsequently decided to shift my career path
+                                        towards the IT branch. Recently, I completed an
+                                        intensive Java full-stack developer bootcamp at Neue Fische.
+                                        With a passion for making things and an analytical,
+                                        logical mindset, I am confident in my ability to create innovative solutions
+                                        that not only have a positive impact but also generate profit for the company.
                                     </Typography>
 
                                     <Box display="flex" gap="0.5rem" justifyContent="center">
