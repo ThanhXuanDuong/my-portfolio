@@ -26,10 +26,16 @@ export default function ProjectCard({
             <CardActions sx={{display:"flex", justifyContent:"center",alignItems:"center", gap:"1rem"}}>
                 <Button href={project.githubLink}
                         variant="outlined"
-                        size="small">GitHub</Button>
-                <Button variant="contained"
-                        size="small"
+                        sx={{width:"7rem"}}>GitHub</Button>
+                <Button variant="outlined"
+                        sx={{width:"7rem"}}
                         onClick={() => onDetail(project.id)}>Details</Button>
+                {project.liveDemoLink &&
+                    <Button href={project.liveDemoLink}
+                            variant="outlined"
+                            sx={{width:"7rem"}}
+                    >Live Demo</Button>
+                }
             </CardActions>
         </Card>
     )

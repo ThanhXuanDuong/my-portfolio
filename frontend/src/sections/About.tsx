@@ -8,11 +8,11 @@ export default function About(){
         <div id="About">
             <ThemeProvider theme={theme}>
                 <Box sx={{ width: "100%",
-                    height:"100vh",
+                    minHeight:"100vh",
                     bgcolor:"#212124",
                     color:"#ffffff"
                 }}>
-                    <Container>
+                    <Container sx={{marginBottom:"5rem"}}>
                         <Typography variant="h1"
                                     paddingTop="100px"
                                     marginBottom="4rem">

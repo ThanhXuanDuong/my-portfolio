@@ -2,8 +2,6 @@ import {Box, Button, Stack, TextField, Typography} from "@mui/material";
 import emailjs from '@emailjs/browser';
 import {FormEvent, useRef} from "react";
 export default function ContactForm(){
-    console.log(process.env.REACT_APP_SERVICE_ID );
-
     const form = useRef<HTMLFormElement>(null)
 
     const sendEmail = (e:FormEvent<HTMLFormElement>) => {

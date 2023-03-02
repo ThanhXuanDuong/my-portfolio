@@ -2,13 +2,14 @@ import {Box, Card, CardMedia, Container, ThemeProvider, Typography} from "@mui/m
 import theme from "../theme/theme";
 
 export default function Skills(){
+
     return (
         <div id="Skills">
             <ThemeProvider theme={theme}>
                 <Box sx={{ width: "100%",
-                    height:"100vh"
+                    minHeight:"100vh"
                 }}>
-                    <Container>
+                    <Container sx={{marginBottom:"5rem"}}>
                         <Typography variant="h1"
                                     paddingTop="100px"
                                     marginBottom="4rem">
@@ -20,21 +21,21 @@ export default function Skills(){
                             gap:"2.5rem",
                             flexWrap:"wrap"
                         }}>
-                            <Card sx={{objectFit:"contain", width:"15%", height:"20%"}}>
+                            <Card sx={{objectFit:"contain", width:"172px", height:"172px", p:"0.5rem"}}>
                                 <CardMedia
                                     component="img"
                                     image="/images/java.jpeg"
                                     alt="java"
                                 />
                             </Card>
-                            <Card sx={{objectFit:"contain",  width:"15%", height:"20%"}}>
+                            <Card sx={{objectFit:"contain",  width:"172px", height:"172px"}}>
                                 <CardMedia
                                     component="img"
                                     image="/images/springboot.jpeg"
                                     alt="springboot"
                                 />
                             </Card>
-                            <Card sx={{objectFit:"contain",  width:"15%", height:"20%"}}>
+                            <Card sx={{objectFit:"contain",  width:"172px", height:"172px", p:"0.5rem"}}>
                                 <CardMedia
                                     component="img"
                                     image="/images/mongodb.png"
@@ -42,7 +43,7 @@ export default function Skills(){
                                 />
                             </Card>
 
-                            <Card sx={{objectFit:"contain",  width:"15%", height:"20%", p:"0.5rem"}}>
+                            <Card sx={{objectFit:"contain",  width:"172px", height:"172px", p:"0.5rem"}}>
                                 <CardMedia
                                     component="img"
                                     image="/images/html.png"
@@ -50,7 +51,7 @@ export default function Skills(){
                                 />
                             </Card>
 
-                            <Card sx={{objectFit:"contain",  width:"15%", height:"20%", p:"0.5rem"}}>
+                            <Card sx={{objectFit:"contain",  width:"172px", height:"172px", p:"0.5rem"}}>
                                 <CardMedia
                                     component="img"
                                     image="/images/css.png"
@@ -58,7 +59,7 @@ export default function Skills(){
                                 />
                             </Card>
 
-                            <Card sx={{objectFit:"cover", width:"15%", height:"20%"}}>
+                            <Card sx={{objectFit:"contain", width:"172px", height:"172px", p:"0.5rem"}}>
                                 <CardMedia
                                     component="img"
                                     image="/images/mui.png"
@@ -66,14 +67,14 @@ export default function Skills(){
                                 />
                             </Card>
 
-                            <Card sx={{objectFit:"contain",  width:"15%", height:"20%"}}>
+                            <Card sx={{objectFit:"contain",  width:"172px", height:"172px",p:"0.5rem"}}>
                                 <CardMedia
                                     component="img"
                                     image="/images/bootstrap.png"
                                     alt="bootstrap"
                                 />
                             </Card>
-                            <Card sx={{objectFit:"contain", width:"15%", height:"20%",p:"0.5rem"}}>
+                            <Card sx={{objectFit:"contain", width:"172px", height:"172px",p:"0.5rem"}}>
                                 <CardMedia
                                     component="img"
                                     image="/images/docker.png"
@@ -81,16 +82,15 @@ export default function Skills(){
                                 />
                             </Card>
 
-                            <Card sx={{objectFit:"fit",  width:"15%", height:"20%",p:"0.5rem"}}>
+                            <Card sx={{objectFit:"contain",  width:"172px", height:"172px",p:"0.5rem"}}>
                                 <CardMedia
                                     component="img"
-                                    height="80%"
-                                    image="/images/react.svg"
+                                    image="/images/react.png"
                                     alt="react"
                                 />
                             </Card>
 
-                            <Card sx={{objectFit:"cover", width:"15%", height:"20%"}}>
+                            <Card sx={{objectFit:"contain",width:"172px", height:"172px"}}>
                                 <CardMedia
                                     component="img"
                                     image="/images/typescript.svg"
@@ -98,22 +98,22 @@ export default function Skills(){
                                 />
                             </Card>
 
-                            <Card sx={{objectFit:"contain", width:"15%", height:"15%",p:"0.5rem"}}>
+                            <Card sx={{objectFit:"contain", width:"172px", height:"100px",p:"0.5rem"}}>
                                 <CardMedia
                                     component="img"
-                                    image="/images/junit.jpeg"
+                                    image="/images/junit.png"
                                     alt="junit"
                                 />
                             </Card>
 
-                            <Card sx={{objectFit:"contain", width:"15%", height:"15%",p:"0.5rem"}}>
+                            <Card sx={{objectFit:"contain", width:"172px", height:"100px",p:"0.5rem"}}>
                                 <CardMedia
                                     component="img"
                                     image="/images/git.png"
                                     alt="git"
                                 />
                             </Card>
-                            <Card sx={{objectFit:"contain", width:"15%", height:"15%",p:"0.5rem"}}>
+                            <Card sx={{objectFit:"contain", width:"172px", height:"100px",p:"0.5rem"}}>
                                 <CardMedia
                                     component="img"
                                     image="/images/github.png"
@@ -121,19 +121,19 @@ export default function Skills(){
                                 />
                             </Card>
 
-                            <Card sx={{objectFit:"contain",width:"15%", height:"15%",p:"0.5rem"}}>
+                            <Card sx={{objectFit:"contain",width:"172px", height:"100px",p:"0.5rem"}}>
                                 <CardMedia
                                     component="img"
                                     image="/images/sonarcloud.png"
                                     alt="sonarcloud"
                                 />
                             </Card>
-                            <Card sx={{objectFit:"contain",width:"15%", height:"15%",p:"0.5rem"}}>
-                                <CardMedia
-                                    component="img"
-                                    image="/images/flyio.jpg"
-                                    alt="flyio"
-                                />
+                            <Card sx={{objectFit:"contain",width:"172px", height:"100px",p:"0.5rem"}}>
+                                    <CardMedia
+                                        component="img"
+                                        image="/images/flyio.jpg"
+                                        alt="flyio"
+                                    />
                             </Card>
                         </Box>
                     </Container>
