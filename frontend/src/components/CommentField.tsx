@@ -21,7 +21,7 @@ export default function CommentField({
                             color:"primary.main",
                             marginBottom:"1rem"
                         }}>
-                Leave your comments below. I appreciate every feedback!
+                Leave your comments below. Thank you for your feedback!
             </Typography>
 
             <CommentForm comment={comment} setComment={setComment} onAdd={onAdd}/>

@@ -1,4 +1,4 @@
-import {Box, Button, Stack, TextField, Typography} from "@mui/material";
+import {Box, Button, Grid, TextField, Typography} from "@mui/material";
 import emailjs from '@emailjs/browser';
 import {FormEvent, useRef} from "react";
 import {toast, ToastContainer} from "react-toastify";
@@ -43,48 +43,58 @@ export default function ContactForm(){
             </Typography>
 
             <form ref={form} onSubmit={sendEmail}>
-                <Stack>
+                <Grid>
                     <TextField required
-                               sx={{width: 500, mb: 2}}
+                               fullWidth
                                id="fullname"
-                               label={"Fullname"}
+                               label={"Full name"}
                                name="from_name"
+                               helperText="Name is required"
                                variant="filled"
-                               size="medium"/>
+                               size="medium"
+                               sx={{mb:2}}
+                    />
 
                     <TextField required
-                               sx={{width: 500, mb: 2}}
-                               id="company"
-                               label={"Company"}
-                               name="from_company"
-                               variant="filled"
-                               size="medium"/>
-
-                    <TextField required
-                               sx={{width: 500, mb: 2}}
+                               fullWidth
                                type="email"
                                id="email"
                                label={"Email"}
+                               helperText="Email is required"
                                name="from_email"
                                variant="filled"
-                               size="medium"/>
+                               size="medium"
+                               sx={{mb:2}}
+                    />
+
+                    <TextField fullWidth
+                               id="company"
+                               label={"Company (optional)"}
+                               name="from_company"
+                               variant="filled"
+                               size="medium"
+                               sx={{mb:2}}
+                    />
 
                     <TextField required
                                multiline
                                rows={10}
                                type="text"
-                               sx={{width: 500, mb: 2}}
+                               fullWidth
                                id="message"
                                label={"Message"}
                                name="message"
+                               helperText="Message is required"
                                variant="filled"
-                               size="medium"/>
+                               size="medium"
+                               sx={{mb:2}}
+                    />
 
                     <Button type="submit"
                             variant="contained"
                             sx={{width:"10rem"}}
                     >Send</Button>
-                </Stack>
+                </Grid>
             </form>
             <ToastContainer position="bottom-left"
                             autoClose={3000}

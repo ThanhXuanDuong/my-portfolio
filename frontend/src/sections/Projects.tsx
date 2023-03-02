@@ -1,8 +1,7 @@
-import theme from "../theme/theme";
+
 import {
     Box,
     Container,
-    ThemeProvider,
     Typography
 } from "@mui/material";
 import {useEffect, useState} from "react";
@@ -24,40 +23,37 @@ export default function Projects(){
     },[])
 
     return (
-        <div id="Projects">
-            <ThemeProvider theme={theme}>
-                <Box sx={{ width: "100%",
-                    bgcolor:"#212124",
-                    color:"#ffffff"
-                }}>
-                    <Container>
-                        <Typography variant="h1"
-                                    paddingTop="100px"
-                                    marginBottom="4rem">
-                            Projects
-                        </Typography>
+        <Box id="Projects"
+            sx={{ width: "100%",
+            bgcolor:"#212124",
+            color:"#ffffff"
+        }}>
+            <Container>
+                <Typography sx={{ typography: {xl:'h1',lg:'h1', md:'h2', sm: 'h3', xs: 'h3'}}}
+                            paddingTop="100px"
+                            marginBottom="4rem">
+                    Projects
+                </Typography>
 
-                        <Box sx={{ width: "100%"}}
-                             display="flex"
-                             justifyContent="space-evenly"
-                             alignItems="center"
-                             paddingBottom="5rem"
-                             gap="2rem"
-                             flexWrap="wrap"
+                <Box sx={{ width: "100%"}}
+                     display="flex"
+                     justifyContent="space-evenly"
+                     alignItems="center"
+                     paddingBottom="5rem"
+                     gap="2rem"
+                     flexWrap="wrap"
 
-                        >
-                            {projects.length>0 &&
-                                projects.map(project =>
-                                    <ProjectCard project={project}
-                                                 onDetail={(id) =>
-                                                     navigate(`/projects/${id}`)}/>
-                                )
-                            }
-
-                        </Box>
-                    </Container>
+                >
+                    {projects.length>0 &&
+                        projects.map(project =>
+                            <ProjectCard project={project}
+                                         onDetail={(id) =>
+                                             navigate(`/projects/${id}`)}/>
+                        )
+                    }
                 </Box>
-            </ThemeProvider>
-        </div>
+            </Container>
+        </Box>
+
     )
 }

@@ -6,6 +6,7 @@ import axios from "axios";
 import {Button, CardMedia, Container, Typography} from "@mui/material";
 import Comment from "../types/Comment";
 import CommentField from "../components/CommentField";
+import "./DetailPage.css"
 
 export function DetailPage(){
 
@@ -68,7 +69,9 @@ export function DetailPage(){
             </Typography>
             <Container sx={{textAlign:"center", marginBottom:"2rem"}}>
                 {project.videoLink
-                    ? <iframe width="80%" height="500" src={project.videoLink} title={project.name}></iframe>
+                    ? <div className="container">
+                        <iframe className="responsive-iframe" src={project.videoLink} title={project.name}></iframe>
+                      </div>
                     : <CardMedia
                         component="img"
                         image={`/api/files/${project.imageId}`}

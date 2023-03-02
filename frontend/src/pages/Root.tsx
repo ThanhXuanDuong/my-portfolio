@@ -8,20 +8,19 @@ import {DetailPage} from "./DetailPage";
 
 export default function Root(){
     return (
-        <>
-            <ThemeProvider theme={theme}>
-                <CssBaseline/>
-                <NavBar/>
-                <Routes>
-                    <Route path={"/"} element={
-                        <HomePage />
-                    }/>
+        <ThemeProvider theme={theme}>
+            <CssBaseline/>
+            <NavBar/>
+            <Routes>
+                <Route path={"/"} element={
+                    <HomePage />
+                }/>
 
-                    <Route path={"/projects/:id"} element={
-                        <DetailPage />
-                    }/>
-                </Routes>
-            </ThemeProvider>
-        </>
+                <Route path={"/projects/:id"} element={
+                    <DetailPage />
+                }/>
+            </Routes>
+        </ThemeProvider>
+
     )
 }

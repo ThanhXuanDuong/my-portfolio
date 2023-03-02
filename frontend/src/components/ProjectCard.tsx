@@ -9,7 +9,7 @@ export default function ProjectCard({
     onDetail: (id:string|undefined)=>void
 }){
     return (
-        <Card sx={{ width: "45%"}} >
+        <Card sx={{ width: {md:"45%", s:"80%"}}} >
             <CardMedia
                 component="img"
                 image={`/api/files/${project.imageId}`}
@@ -25,6 +25,7 @@ export default function ProjectCard({
             </CardContent>
             <CardActions sx={{display:"flex", justifyContent:"center",alignItems:"center", gap:"1rem"}}>
                 <Button href={project.githubLink}
+                        target="_blank"
                         variant="outlined"
                         sx={{width:"7rem"}}>GitHub</Button>
                 <Button variant="contained"
