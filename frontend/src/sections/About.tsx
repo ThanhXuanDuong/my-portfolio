@@ -13,7 +13,6 @@ import theme from "../theme/theme";
 
 export default function About(){
     const matches = useMediaQuery(theme.breakpoints.up('sm'));
-    console.log(matches)
     return (
         <Box id="About"
             sx={{marginBottom:"5rem",
@@ -76,7 +75,7 @@ export default function About(){
                     </Grid>
                 </Grid>
                 {matches &&
-                    <Box textAlign="end">
+                    <Box textAlign="center">
                         <IconButton href="#Skills">
                             <KeyboardDoubleArrowDownIcon sx={{fontSize:"60px", color:"#ffffff"}}/>
                         </IconButton>

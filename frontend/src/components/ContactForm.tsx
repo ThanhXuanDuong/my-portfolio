@@ -17,6 +17,7 @@ export default function ContactForm(){
             form.current,
             'tGRMulOYU46TAmxsZ')
             .then((result) => {
+                form.current?.reset();
                 console.log(result.text);
                 toast.success("Your email was send!");
             }, (error) => {
@@ -33,7 +34,7 @@ export default function ContactForm(){
             alignItems="start"
             marginBottom="5rem"
         >
-            <Typography variant="h6"
+            <Typography variant="h5"
                         sx={{fontWeight: 'bold',
                             color:"primary.main",
                             marginBottom:"1rem",

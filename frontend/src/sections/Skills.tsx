@@ -2,7 +2,7 @@ import {Box, Card, CardMedia, Container, Typography, useMediaQuery} from "@mui/m
 import theme from "../theme/theme";
 
 export default function Skills(){
-    const matches = useMediaQuery(theme.breakpoints.up('sm'));
+    const matches = useMediaQuery(theme.breakpoints.up('md'));
     return (
         <Container id="Skills"
             sx={{ width: "100%",
