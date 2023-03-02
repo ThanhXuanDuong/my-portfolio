@@ -27,15 +27,9 @@ export default function ProjectCard({
                 <Button href={project.githubLink}
                         variant="outlined"
                         sx={{width:"7rem"}}>GitHub</Button>
-                <Button variant="outlined"
+                <Button variant="contained"
                         sx={{width:"7rem"}}
                         onClick={() => onDetail(project.id)}>Details</Button>
-                {project.liveDemoLink &&
-                    <Button href={project.liveDemoLink}
-                            variant="outlined"
-                            sx={{width:"7rem"}}
-                    >Live Demo</Button>
-                }
             </CardActions>
         </Card>
     )

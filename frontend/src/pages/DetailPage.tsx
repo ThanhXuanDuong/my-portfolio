@@ -3,7 +3,7 @@ import {useParams} from "react-router";
 import {useEffect, useState} from "react";
 import Project from "../types/Project";
 import axios from "axios";
-import {CardMedia, Container, Typography} from "@mui/material";
+import {Button, CardMedia, Container, Typography} from "@mui/material";
 import Comment from "../types/Comment";
 import CommentField from "../components/CommentField";
 
@@ -72,9 +72,13 @@ export function DetailPage(){
                     : <CardMedia
                         component="img"
                         image={`/api/files/${project.imageId}`}
-                        alt={project.name}/>
+                        alt={project.name}
+                        sx={{border: "1px solid darkgray"}}
+                    />
                 }
+
             </Container>
+
             <Container sx={{marginBottom:"1rem"}}>
                 <Typography variant="h6" sx={{ fontWeight: 'bold'}}>
                     Details
@@ -84,6 +88,14 @@ export function DetailPage(){
                 </Typography>
             </Container>
 
+            {project.liveDemoLink &&
+                <Container sx={{marginTop:"1rem", marginBottom:"2rem"}}>
+                    <Button href={project.liveDemoLink}
+                            variant="contained"
+                            sx={{width:"7rem"}}
+                    >Live Demo</Button>
+                </Container>
+            }
             <Container sx={{marginBottom:"2rem"}}>
                 <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
                     Technologies

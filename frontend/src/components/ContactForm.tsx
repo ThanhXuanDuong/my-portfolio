@@ -1,6 +1,9 @@
 import {Box, Button, Stack, TextField, Typography} from "@mui/material";
 import emailjs from '@emailjs/browser';
 import {FormEvent, useRef} from "react";
+import {toast, ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function ContactForm(){
     const form = useRef<HTMLFormElement>(null)
 
@@ -15,8 +18,10 @@ export default function ContactForm(){
             'tGRMulOYU46TAmxsZ')
             .then((result) => {
                 console.log(result.text);
+                toast.success("Your email was send!");
             }, (error) => {
                 console.log(error.text);
+                toast.error("Error while sending email!");
             });
     };
 
@@ -44,7 +49,7 @@ export default function ContactForm(){
                                id="fullname"
                                label={"Fullname"}
                                name="from_name"
-                               variant="outlined"
+                               variant="filled"
                                size="medium"/>
 
                     <TextField required
@@ -52,7 +57,7 @@ export default function ContactForm(){
                                id="company"
                                label={"Company"}
                                name="from_company"
-                               variant="outlined"
+                               variant="filled"
                                size="medium"/>
 
                     <TextField required
@@ -61,7 +66,7 @@ export default function ContactForm(){
                                id="email"
                                label={"Email"}
                                name="from_email"
-                               variant="outlined"
+                               variant="filled"
                                size="medium"/>
 
                     <TextField required
@@ -72,7 +77,7 @@ export default function ContactForm(){
                                id="message"
                                label={"Message"}
                                name="message"
-                               variant="outlined"
+                               variant="filled"
                                size="medium"/>
 
                     <Button type="submit"
@@ -81,6 +86,16 @@ export default function ContactForm(){
                     >Send</Button>
                 </Stack>
             </form>
+            <ToastContainer position="bottom-left"
+                            autoClose={3000}
+                            hideProgressBar={false}
+                            newestOnTop={true}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover
+                            theme="colored"/>
         </Box>
     )
 }

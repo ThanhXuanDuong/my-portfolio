@@ -20,7 +20,8 @@ export default function CommentForm({
     console.log(comment);
     return (
         <Stack>
-            <TextField sx={{width: "60%", mb: 2}}
+            <TextField required
+                       sx={{width: "60%", mb: 2}}
                        id="Name"
                        label={"Name"}
                        name="writeBy"
@@ -30,7 +31,8 @@ export default function CommentForm({
                        onChange={handleChange}
             />
 
-            <TextField multiline
+            <TextField required
+                       multiline
                        rows={5}
                        sx={{width: "60%", mb: 2}}
                        id="Comment"
