@@ -6,11 +6,14 @@ import {
     Container,
     Grid,
     IconButton,
-    Typography
+    Typography, useMediaQuery
 } from "@mui/material";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
+import theme from "../theme/theme";
 
 export default function About(){
+    const matches = useMediaQuery(theme.breakpoints.up('sm'));
+    console.log(matches)
     return (
         <Box id="About"
             sx={{marginBottom:"5rem",
@@ -25,7 +28,7 @@ export default function About(){
                     About
                 </Typography>
                 <Grid container spacing={2}>
-                    <Grid item xl={7} md={6}>
+                    <Grid item xl={7} md={6} alignSelf="center">
                         <Card sx={{width: {xl: '100%', md: '90%',objectFit:"contain"}}}>
                             <CardMedia
                                 component="img"
@@ -34,10 +37,12 @@ export default function About(){
                             />
                         </Card>
                     </Grid>
+
                     <Grid item xl={5} md={6} alignSelf="center">
                         <Box display="flex"
                              flexDirection="column"
                              marginTop="2rem"
+                             padding={matches? "2rem":"0"}
                              justifyContent="center"
                              alignItems="center"
                              gap="1rem"
@@ -55,7 +60,7 @@ export default function About(){
                                 that not only have a positive impact but also generate prosperity for the enterprise.
                             </Typography>
 
-                            <Box display="flex" gap="0.5rem" justifyContent="center">
+                            <Box display="flex" gap="0.5rem" justifyContent="center" marginBottom="5rem">
                                 <Button href="#Skills"
                                         variant="contained"
                                         sx={{width:"10rem"}}
@@ -70,11 +75,14 @@ export default function About(){
                         </Box>
                     </Grid>
                 </Grid>
-                <Box textAlign="end">
-                    <IconButton href="#Skills">
-                        <KeyboardDoubleArrowDownIcon sx={{fontSize:"60px", color:"#ffffff"}}/>
-                    </IconButton>
-                </Box>
+                {matches &&
+                    <Box textAlign="end">
+                        <IconButton href="#Skills">
+                            <KeyboardDoubleArrowDownIcon sx={{fontSize:"60px", color:"#ffffff"}}/>
+                        </IconButton>
+                    </Box>
+                }
+
             </Container>
         </Box>
     )

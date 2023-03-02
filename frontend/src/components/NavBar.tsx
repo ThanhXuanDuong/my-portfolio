@@ -11,7 +11,7 @@ export default function NavBar() {
     return (
         <ThemeProvider theme={theme}>
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="fixed" sx={{opacity:"0.5"}}>
+            <AppBar position="fixed" sx={{opacity:"0.8"}}>
                 <Toolbar sx={{backgroundColor:"secondary.main", color:"secondary.contrastText"}}>
                     <Typography variant="body2" component="div" sx={{ flexGrow: 1 }}>
                         WELCOME
@@ -26,7 +26,6 @@ export default function NavBar() {
                         </>
 
                        : <MenuListButton/>}
-
                 </Toolbar>
             </AppBar>
         </Box>

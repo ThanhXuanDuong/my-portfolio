@@ -1,10 +1,11 @@
-import {Box, Button, Card, CardMedia, Container, Grid, IconButton, Typography} from "@mui/material";
+import {Box, Button, Card, CardMedia, Container, Grid, IconButton, Typography, useMediaQuery} from "@mui/material";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
+import theme from "../theme/theme";
 
 export default function Home(){
-
+    const matches = useMediaQuery(theme.breakpoints.up('sm'));
     return (
         <Container id="Home">
             <Box display="flex"
@@ -33,12 +34,14 @@ export default function Home(){
                             <Box display="flex" gap="1rem">
                                 <IconButton sx={{backgroundColor:"primary.main"}}
                                             href="https://github.com/ThanhXuanDuong"
+                                            target="blank"
                                 >
                                     <GitHubIcon sx={{color:"primary.contrastText"}}/>
                                 </IconButton>
 
                                 <IconButton sx={{backgroundColor:"primary.main"}}
                                             href="https://www.linkedin.com/in/xuanthanhduong/"
+                                            target="blank"
                                 >
                                     <LinkedInIcon sx={{color:"primary.contrastText"}}/>
                                 </IconButton>
@@ -66,11 +69,14 @@ export default function Home(){
                         </Card>
                     </Grid>
                 </Grid>
-                <Box>
-                    <IconButton href="#About">
-                        <KeyboardDoubleArrowDownIcon sx={{fontSize:"60px"}}/>
-                    </IconButton>
-                </Box>
+                {matches &&
+                    <Box textAlign="start">
+                        <IconButton href="#About">
+                            <KeyboardDoubleArrowDownIcon sx={{fontSize:"60px"}}/>
+                        </IconButton>
+                    </Box>
+                }
+
             </Box>
         </Container>
 

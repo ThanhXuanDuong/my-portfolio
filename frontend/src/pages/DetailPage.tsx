@@ -33,6 +33,14 @@ export function DetailPage(){
     const [comment, setComment] =useState<Comment>(initialComment);
     const [comments, setComments] =useState<Comment[]>([]);
 
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth',
+        });
+    }, []);
+
     useEffect(() =>{
         (async ()=>{
             const response = await axios.get(`/api/projects/${id}`);
