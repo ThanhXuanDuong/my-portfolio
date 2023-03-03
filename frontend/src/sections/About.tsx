@@ -12,7 +12,7 @@ import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrow
 import theme from "../theme/theme";
 
 export default function About(){
-    const matches = useMediaQuery(theme.breakpoints.up('sm'));
+    const matches = useMediaQuery(theme.breakpoints.up('md'));
     return (
         <Box id="About"
             sx={{marginBottom:"5rem",
@@ -46,7 +46,7 @@ export default function About(){
                              alignItems="center"
                              gap="1rem"
                         >
-                            <Typography sx={{typography: { xl: 'h6', md: 'body1',s:'body2'},
+                            <Typography sx={{typography: { xl: 'h6', md: 'body1',sm:'body1',xs:'body2'},
                                 textAlign:"justify"
                             }}>
                                 As a recent graduate in medical engineering,
@@ -75,7 +75,7 @@ export default function About(){
                     </Grid>
                 </Grid>
                 {matches &&
-                    <Box textAlign="center">
+                    <Box textAlign="end">
                         <IconButton href="#Skills">
                             <KeyboardDoubleArrowDownIcon sx={{fontSize:"60px", color:"#ffffff"}}/>
                         </IconButton>
