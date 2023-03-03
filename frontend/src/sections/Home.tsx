@@ -5,7 +5,7 @@ import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrow
 import theme from "../theme/theme";
 
 export default function Home(){
-    const matches = useMediaQuery(theme.breakpoints.up('sm'));
+    const matches = useMediaQuery(theme.breakpoints.up('md'));
     return (
         <Container id="Home">
             <Box display="flex"
@@ -14,21 +14,29 @@ export default function Home(){
                  height="100vh"
                  sx={{marginTop: {xl: "5rem", md:"2rem"}}}
                  justifyContent="center"
-                 alignItems="center"
                  flexWrap="wrap"
             >
-                <Grid container spacing={2}>
-                    <Grid item xl={5} md={6} alignSelf="center">
+                <Grid container
+                      rowSpacing={8}
+                      columnSpacing={2}
+                      justifyContent="center">
+                    <Grid item xl={6.5} md={6} alignSelf="center" left={0}>
                         <Box display="flex"
                              flexDirection="column"
-                             paddingLeft="5rem"
+                             paddingLeft="2rem"
                              gap="1rem"
                         >
-                            <Typography sx={{ typography: {xl:'h1',lg:'h1', md:'h2', sm: 'h3', xs: 'h3'}}}>
+                            <Typography sx={{ typography: {xl:'h1',lg:'h1', md:'h2', sm: 'h3', xs: 'h4'}}}>
                                 Hi,
                             </Typography>
-                            <Typography sx={{ typography: {xl:'h4',lg:'h4', md:'h5', sm: 'h6', xs: 'body1'}}}>
-                                I'm Xuan Thanh Duong
+                            <Typography sx={{ typography: {xl:'h4',lg:'h5', md:'h6', sm: 'h6', xs: 'body1'}}}>
+                                I'm Xuan Thanh Duong.
+                            </Typography>
+                            <Typography sx={{ typography: {xl:'h5',lg:'h6', md:'body1', sm: 'body1', xs: 'body2'},
+                                        width:"80%",
+                                        textAlign:"justify"
+                            }}>
+                                I'm medical engineer and on my way to become a professional fullstack developer.
                             </Typography>
 
                             <Box display="flex" gap="1rem">
@@ -51,13 +59,12 @@ export default function Home(){
                                         sx={{width:"8rem"}}
                                 >About me</Button>
                             </Box>
-
-
                         </Box>
                     </Grid>
-                    <Grid item xl={7} md={6} >
+
+                    <Grid item xl={5.5} md={6}>
                         <Card sx={{
-                            width: {xl: '100%', lg:'80%', md:'80%', sm: '80%',xs:'80%'},
+                            maxWidth: {xl: '70vmin', lg:'70vmin', md:'50vmin', sm: '60vmin',xs:'70vmin'},
                             borderRadius:"70% 30% 30% 70% / 60% 40% 60% 40%",
                             margin:'0',
                             objectFit:"contain"}}>
@@ -70,7 +77,7 @@ export default function Home(){
                     </Grid>
                 </Grid>
                 {matches &&
-                    <Box textAlign="start">
+                    <Box left={0}>
                         <IconButton href="#About">
                             <KeyboardDoubleArrowDownIcon sx={{fontSize:"60px"}}/>
                         </IconButton>
