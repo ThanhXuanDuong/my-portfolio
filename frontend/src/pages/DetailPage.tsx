@@ -99,12 +99,22 @@ export function DetailPage(){
                 </Typography>
             </Container>
 
-            {project.liveDemoLink &&
+            {(project.githubLink || project.liveDemoLink) &&
                 <Container sx={{marginTop:"1rem", marginBottom:"2rem"}}>
-                    <Button href={project.liveDemoLink}
-                            variant="contained"
-                            sx={{width:"7rem"}}
-                    >Live Demo</Button>
+                    {project.githubLink &&
+                        <Button href={project.githubLink}
+                                variant="outlined"
+                                sx={{width:"7rem",marginRight:"1rem"}}
+                                target="_blank"
+                        >GitHub</Button>
+                    }
+                    {project.liveDemoLink &&
+                        <Button href={project.liveDemoLink}
+                                variant="contained"
+                                sx={{width:"7rem"}}
+                                target="_blank"
+                        >Live Demo</Button>
+                    }
                 </Container>
             }
             <Container sx={{marginBottom:"2rem"}}>
