@@ -79,7 +79,7 @@ export default function Skills(){
                 <Card sx={{objectFit:"cover", width:cardWidth,p:"0.5em"}}>
                     <CardMedia
                         component="img"
-                        image="/images/docker.png"
+                        image="/images/docker1.png"
                         alt="docker"
                     />
                 </Card>
