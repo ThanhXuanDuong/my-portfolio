@@ -33,6 +33,7 @@ export default function About(){
                                 component="img"
                                 image="/images/profile1.jpg"
                                 alt={"profile1"}
+                                sx={{border:"1px solid black"}}
                             />
                         </Card>
                     </Grid>

@@ -23,7 +23,7 @@ export default function MyContact(){
                  alignItems="center"
                  gap={matches?"0": "2rem"}
             >
-                <IconButton sx={{backgroundColor:"primary.main"}}>
+                <IconButton disableRipple sx={{backgroundColor:"primary.main"}}>
                     <PlaceIcon sx={{color:"primary.contrastText"}}/>
                 </IconButton>
                 <Stack>
@@ -38,7 +38,7 @@ export default function MyContact(){
                  alignItems="center"
                  gap={matches?"0": "2rem"}
             >
-                <IconButton sx={{backgroundColor:"primary.main"}}>
+                <IconButton disableRipple sx={{backgroundColor:"primary.main"}}>
                     <CallIcon sx={{color:"primary.contrastText"}}/>
                 </IconButton>
                 <Typography variant="body1"> +49-176-61874750</Typography>
@@ -50,7 +50,7 @@ export default function MyContact(){
                  alignItems="center"
                  gap={matches?"0": "2rem"}
             >
-                <IconButton sx={{backgroundColor:"primary.main"}}>
+                <IconButton disableRipple sx={{backgroundColor:"primary.main"}}>
                     <MailIcon sx={{color:"primary.contrastText"}}/>
                 </IconButton>
                 <Typography variant="body1"> xuanthanhduong94@gmail.com</Typography>
