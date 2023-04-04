@@ -103,7 +103,7 @@ export default function Skills(){
                 <Card sx={{width:cardWidth,p:"0.5em"}}>
                     <CardMedia
                         component="img"
-                        image="/images/junit.png"
+                        image="/images/junit5.png"
                         alt="junit"
                     />
                 </Card>
@@ -111,7 +111,7 @@ export default function Skills(){
                 <Card sx={{objectFit:"contain", width:cardWidth,p:"0.5em"}}>
                     <CardMedia
                         component="img"
-                        image="/images/git.png"
+                        image="/images/git1.png"
                         alt="git"
                     />
                 </Card>
@@ -119,7 +119,7 @@ export default function Skills(){
                 <Card sx={{objectFit:"contain",width:cardWidth,p:"0.5em"}}>
                     <CardMedia
                         component="img"
-                        image="/images/sonarcloud.png"
+                        image="/images/sonar.png"
                         alt="sonarcloud"
                     />
                 </Card>
@@ -127,7 +127,7 @@ export default function Skills(){
                 <Card sx={{objectFit:"contain",width:cardWidth,p:"0.5em"}}>
                     <CardMedia
                         component="img"
-                        image="/images/github.png"
+                        image="/images/gitHub.png"
                         alt="github"
                     />
                 </Card>
