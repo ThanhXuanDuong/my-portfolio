@@ -1,4 +1,4 @@
-import {Button, Card, CardActions, CardContent, CardMedia, Typography} from "@mui/material";
+import {Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography} from "@mui/material";
 import Project from "../types/Project";
 
 export default function ProjectCard({
@@ -10,19 +10,22 @@ export default function ProjectCard({
 }){
     return (
         <Card sx={{ width: {md:"45%", s:"80%"}}} >
-            <CardMedia
-                component="img"
-                image={`/api/files/${project.imageId}`}
-                alt={project.name}
-            />
-            <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                    {project.name}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    {project.shortDescription}
-                </Typography>
-            </CardContent>
+            <CardActionArea onClick={() => onDetail(project.id)}>
+                <CardMedia
+                    sx={{padding:"5%",bgcolor:"#DDDCDB"}}
+                    component="img"
+                    image={`/api/files/${project.imageId}`}
+                    alt={project.name}
+                />
+                <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                        {project.name}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                        {project.shortDescription}
+                    </Typography>
+                </CardContent>
+            </CardActionArea>
             <CardActions sx={{display:"flex", justifyContent:"center",alignItems:"center", gap:"1rem"}}>
                 <Button href={project.githubLink}
                         target="_blank"
